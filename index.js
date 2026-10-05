@@ -1,14 +1,11 @@
-var fs = require("fs");
-var Transform = require("stream").Transform;
-var PassThrough = require("stream").PassThrough;
-var zlib = require("zlib");
-var util = require("util");
-var EventEmitter = require("events").EventEmitter;
-var errorMonitor = require("events").errorMonitor;
-var crc32 = require("buffer-crc32");
+import fs from "node:fs";
+import {Transform, PassThrough} from "node:stream";
+import zlib from "node:zlib";
+import util from "node:util";
+import {EventEmitter, errorMonitor} from "node:events";
+import crc32 from "buffer-crc32";
 
-exports.ZipFile = ZipFile;
-exports.dateToDosDateTime = dateToDosDateTime;
+export {ZipFile, dateToDosDateTime};
 
 util.inherits(ZipFile, EventEmitter);
 function ZipFile() {

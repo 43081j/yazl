@@ -1,7 +1,10 @@
-var fs = require("fs");
-var yazl = require("../");
-var yauzl = require("yauzl");
-var BufferList = require("./bl-minimal.js");
+import fs from "node:fs";
+import {fileURLToPath} from "node:url";
+import * as yazl from "../index.js";
+import yauzl from "yauzl";
+import BufferList from "./bl-minimal.js";
+
+const __filename = fileURLToPath(import.meta.url);
 
 // Test:
 //  * filename canonicalization.

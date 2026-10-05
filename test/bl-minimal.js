@@ -1,6 +1,6 @@
 // This module is inspired by bl by Rod Vagg. https://github.com/rvagg/bl
 
-const {Duplex} = require("node:stream");
+import {Duplex} from "node:stream";
 class BufferList extends Duplex {
   constructor(endCallback) {
     super();
@@ -31,4 +31,4 @@ class BufferList extends Duplex {
   }
 }
 
-module.exports = BufferList;
+export default BufferList;

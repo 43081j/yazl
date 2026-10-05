@@ -2,7 +2,9 @@
   "name": "yazl",
   "version": "3.3.1",
   "description": "yet another zip library for node",
+  "type": "module",
   "main": "index.js",
+  "exports": "./index.js",
   "scripts": {
     "test": "node test/test.js"
   },

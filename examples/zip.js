@@ -1,12 +1,13 @@
+import * as yazl from "../index.js";
+import fs from "node:fs";
+
 var usage =
-  "node " + __filename.replace(/.*[\/\\]/, "") + " " +
+  "node " + import.meta.url.replace(/.*\//, "") + " " +
   "[FILE | --[no-]compress | {--file|--buffer|--stream} | --[no-]zip64 | --[no-]verbose]... -o OUTPUT.zip" + "\n" +
   "\n" +
   "all arguments and switches are processed in order. for example:" + "\n" +
   "  node zip.js --compress a.txt --no-compress b.txt -o out.zip" + "\n" +
   "would result in compression for a.txt, but not for b.txt.";
-var yazl = require("../");
-var fs = require("fs");
 
 var zipfile = new yazl.ZipFile();
 var options = {compress: false, forceZip64Format: false};

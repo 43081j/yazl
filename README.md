@@ -16,9 +16,10 @@ Design principles:
 ## Usage
 
 ```js
-var yazl = require("yazl");
+import * as yazl from "yazl";
+import fs from "node:fs";
 
-var zipfile = new yazl.ZipFile();
+const zipfile = new yazl.ZipFile();
 zipfile.addFile("file1.txt", "file1.txt");
 // (add only files, not directories)
 zipfile.addFile("path/to/file.txt", "path/in/zipfile.txt");
@@ -153,7 +154,7 @@ Here's an example call to this method to illustrate the function callbacks:
 
 ```js
 zipfile.addReadStreamLazy("path/in/archive.txt", function(cb) {
-  var readStream = getTheReadStreamSomehow();
+  const readStream = getTheReadStreamSomehow();
   cb(null, readStream);
 });
 ```
